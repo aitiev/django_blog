@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-</head>
-<body>
+{% extends 'includes/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
     <h1>Список публикаций</h1>
+    <a role="button" class="btn btn-primary" href="{% url 'add-post' %}"> + Add new post</a><br>
+    <br>
     {% for post in posts %}
     <p><a href="{% url 'post-details' pk=post.id %}">{{ post.title }}</a><br>
-            {% if post.image %}<img width="200" src="{{ post.image.url }}">{% endif %}
+<!--            {% if post.image %}<img width="200" src="{{ post.image.url }}">{% endif %}-->
     </p>
     {% endfor %}
-</body>
-</html>
+
+{% endblock body %}

@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'includes/base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block body %}
+
+    <h1>Вы действительно хотите удалить пост?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" value="Yes">Delete</button>
+        <a href="/"><input type="button" value="Cancel"></a>
+    </form>
+
+{% endblock body %}
