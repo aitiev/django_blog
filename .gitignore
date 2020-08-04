@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea/
+.vscode/
+
+makers_test/media/
+media/
