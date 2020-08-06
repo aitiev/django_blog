@@ -1,3 +1,7 @@
 Django==3.0.7
 psycopg2-binary==2.8.5
 Pillow==7.1
+gunicorn
+python-decouple
+dj-database-url
+whitenoise
