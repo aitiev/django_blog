@@ -1,6 +1,6 @@
 from django import forms
 
-from blog.models import Category, Post
+from .models import Category, Post
 
 
 # class AddPostForm(forms.Form):
@@ -8,6 +8,7 @@ from blog.models import Category, Post
 #     category = forms.ModelChoiceField(queryset=Category.objects.all(), required=True)
 #     text = forms.CharField(required=True, widget=forms.Textarea)
 #     image = forms.ImageField()
+
 
 class AddPostForm(forms.ModelForm):
     class Meta:
@@ -19,4 +20,3 @@ class UpdatePostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'category', 'text', 'image')
-

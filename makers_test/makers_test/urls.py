@@ -18,13 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-# from blog.views import home_page_view, post_details
-from blog.views import categories_list
+from blog.class_views import CategoriesListView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', categories_list, name='home-page'),
-    # path('', home_page_view, name='home'),
-    # path('posts/<int:pk>/', post_details, name='post-details')
+    # path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('account.urls')),
+    path('', CategoriesListView.as_view(), name='home-page'),
     path('posts/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
