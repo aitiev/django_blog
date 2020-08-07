@@ -13,7 +13,7 @@ from .models import Category, Post
 class AddPostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'category', 'text', 'image', 'user')
+        fields = ('title', 'category', 'text', 'image')
 
 
 class UpdatePostForm(forms.ModelForm):
